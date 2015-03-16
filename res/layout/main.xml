@@ -3,12 +3,42 @@
               android:orientation="vertical"
               android:layout_width="fill_parent"
               android:layout_height="fill_parent"
-    >
+              android:id="@+id/"
+              android:weightSum="1">
 
     <TextView
-        android:layout_width="fill_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World, MainActivity"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Ввести напоминание"
+        android:id="@+id/text"
+        android:layout_gravity="center_horizontal"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="137dp"
+        android:id="@+id/editText"
+        android:layout_gravity="center_horizontal"/>
+
+    <DatePicker
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/datePicker"
+        android:layout_gravity="center_horizontal"/>
+
+    <TimePicker
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/timePicker"
+        android:layout_gravity="center_horizontal"/>
+
+    <Button
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:text="отправить"
+        android:id="@+id/button"
+        android:layout_gravity="center_horizontal"
         />
+
 </LinearLayout>
 

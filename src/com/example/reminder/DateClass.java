@@ -1,4 +1,8 @@
 package com.example.reminder;
+import android.util.Log;
+import android.widget.TextView;
+
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.ArrayList;
 import java.util.Date;
@@ -10,13 +14,19 @@ public class DateClass {
 
 
 
-    public static void main(String args[]) {
+  static  ArrayList<String> liste_String = new ArrayList<String>();
+
+
+
+    public  void main() {
 
 
         ArrayList<Date> liste_gold = new ArrayList<Date>();
         ArrayList<Date> liste_blue = new ArrayList<Date>();
         ArrayList<Date> liste_black = new ArrayList<Date>();
         ArrayList<Date> liste_green = new ArrayList<Date>();
+
+
         liste_gold_add(liste_gold);
         liste_gold_search(liste_gold);
         liste_blue_add(liste_blue);
@@ -25,8 +35,9 @@ public class DateClass {
         liste_black_search(liste_black);
         liste_green_add(liste_green);
         liste_green_search(liste_green);
+
     }
-    public static ArrayList<Date> liste_gold_add (ArrayList<Date> arrayList ){
+    public   ArrayList<Date> liste_gold_add (ArrayList<Date> arrayList ){
 
         arrayList.add(new Date(115,2,24,7,0,0));
         arrayList.add(new Date(115,3,23,7,0,0));
@@ -42,7 +53,7 @@ public class DateClass {
         return arrayList;
     }
 
-    public static ArrayList<Date> liste_blue_add (ArrayList<Date> arrayList ){
+    public  ArrayList<Date> liste_blue_add (ArrayList<Date> arrayList ){
 
         arrayList.add(new Date(115,2,24,7,0,0));
         arrayList.add(new Date(115,3,23,7,0,0));
@@ -58,7 +69,7 @@ public class DateClass {
         return arrayList;
     }
 
-    public static ArrayList<Date> liste_green_add (ArrayList<Date> arrayList ){
+    public  ArrayList<Date> liste_green_add (ArrayList<Date> arrayList ){
 
         arrayList.add(new Date(115,2,5,7,0,0));
         arrayList.add(new Date(115,2,20,7,0,0));
@@ -85,7 +96,7 @@ public class DateClass {
 
         return arrayList;
     }
-    public static ArrayList<Date> liste_black_add (ArrayList<Date> arrayList ){
+    public  ArrayList<Date> liste_black_add (ArrayList<Date> arrayList ){
 
         arrayList.add(new Date(115,2,13,7,0,0));
         arrayList.add(new Date(115,2,27,7,0,0));
@@ -112,30 +123,40 @@ public class DateClass {
     }
 
 
-    public static ArrayList<Date> liste_gold_search (ArrayList<Date> arrayList ){
+    public  ArrayList<Date> liste_gold_search (ArrayList<Date> arrayList ){
         Date cuurentTime = new Date();
         ArrayList<Date> liste_gold_search = new ArrayList<Date>();
-
+        liste_String.add( "yellow  :");
         for(Date ausgabe : arrayList) {
             if(cuurentTime.getMonth() == ausgabe.getMonth())
             {
+              // System.out.println(format1.format(ausgabe));
+                SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy hh:mm");
+                //   String sDate = sdf.format(new Date(System.currentTimeMillis()));
+                String sDate = sdf.format(ausgabe);
+                liste_String.add(sDate);
                 liste_gold_search.add(ausgabe);
 
 
     }
+
 
 }
         System.out.println( "yellow  :"+ liste_gold_search.toString());
     return liste_gold_search;
    }
 
-    public static ArrayList<Date> liste_blue_search (ArrayList<Date> arrayList ){
+    public  ArrayList<Date> liste_blue_search (ArrayList<Date> arrayList ){
         Date cuurentTime = new Date();
         ArrayList<Date> liste_blue_search = new ArrayList<Date>();
+        liste_String.add( "blue  :");
 
         for(Date ausgabe : arrayList) {
             if(cuurentTime.getMonth() == ausgabe.getMonth())
             {
+                SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy hh:mm");
+                String sDate = sdf.format(ausgabe);
+                liste_String.add(sDate);
                 liste_blue_search.add(ausgabe);
 
 
@@ -146,12 +167,18 @@ public class DateClass {
         return liste_blue_search;
     }
 
-    public static ArrayList<Date> liste_green_search (ArrayList<Date> arrayList ) {
+    public  ArrayList<Date> liste_green_search (ArrayList<Date> arrayList ) {
         Date cuurentTime = new Date();
         ArrayList<Date> liste_green_search = new ArrayList<Date>();
 
+        liste_String.add( "green  :");
+
         for (Date ausgabe : arrayList) {
             if (cuurentTime.getMonth() == ausgabe.getMonth()) {
+
+                SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy hh:mm");
+                String sDate = sdf.format(ausgabe);
+                liste_String.add(sDate);
                 liste_green_search.add(ausgabe);
 
 
@@ -161,12 +188,18 @@ public class DateClass {
         System.out.println("green  :" + liste_green_search.toString());
         return liste_green_search;
     }
-    public static ArrayList<Date> liste_black_search (ArrayList<Date> arrayList ) {
+    public  ArrayList<Date> liste_black_search (ArrayList<Date> arrayList ) {
         Date cuurentTime = new Date();
         ArrayList<Date> liste_black_search = new ArrayList<Date>();
 
+        liste_String.add( "black  :");
+
         for (Date ausgabe : arrayList) {
             if (cuurentTime.getMonth() == ausgabe.getMonth()) {
+
+                SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy hh:mm");
+                String sDate = sdf.format(ausgabe);
+                liste_String.add(sDate);
                 liste_black_search.add(ausgabe);
 
 
@@ -176,4 +209,15 @@ public class DateClass {
         System.out.println("black  :" + liste_black_search.toString());
         return liste_black_search;
     }
-}
+
+
+
+
+
+
+        }
+
+
+
+
+

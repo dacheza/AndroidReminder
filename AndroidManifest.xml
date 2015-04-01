@@ -14,6 +14,12 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+
+
+    <activity android:name=".OutActivity">
+
+    </activity>
+
     </application>
     <uses-permission android:name="android.permission.READ_CALENDAR"> </uses-permission>
     <uses-permission android:name="android.permission.WRITE_CALENDAR"> </uses-permission>

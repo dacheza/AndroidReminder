@@ -1,9 +1,5 @@
 package com.example.reminder;
-import android.util.Log;
-import android.widget.TextView;
-
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -14,7 +10,10 @@ public class DateClass {
 
 
 
-  static  ArrayList<String> liste_String = new ArrayList<String>();
+  static  ArrayList<String> liste_gold_String = new ArrayList<String>();
+    static  ArrayList<String> liste_blue_String = new ArrayList<String>();
+    static  ArrayList<String> liste_green_String = new ArrayList<String>();
+    static  ArrayList<String> liste_black_String = new ArrayList<String>();
 
 
 
@@ -42,7 +41,7 @@ public class DateClass {
         arrayList.add(new Date(115,2,24,7,0,0));
         arrayList.add(new Date(115,3,23,7,0,0));
         arrayList.add(new Date(115,4,21,7,0,0));
-        arrayList.add(new Date(115,5,18,7,0,0));
+       arrayList.add(new Date(115,5,18,7,0,0));
         arrayList.add(new Date(115,6,16,7,0,0));
         arrayList.add(new Date(115,7,13,7,0,0));
         arrayList.add(new Date(115,8,10,7,0,0));
@@ -126,15 +125,16 @@ public class DateClass {
     public  ArrayList<Date> liste_gold_search (ArrayList<Date> arrayList ){
         Date cuurentTime = new Date();
         ArrayList<Date> liste_gold_search = new ArrayList<Date>();
-        liste_String.add( "yellow  :");
+      //  liste_gold_String.add( "Gelbe Tonne :");
         for(Date ausgabe : arrayList) {
-            if(cuurentTime.getMonth() == ausgabe.getMonth())
-            {
+            if (cuurentTime.getMonth() == ausgabe.getMonth() )
+                if (  ausgabe.after(cuurentTime)) {
               // System.out.println(format1.format(ausgabe));
-                SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy hh:mm");
+              //  SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy ");
                 //   String sDate = sdf.format(new Date(System.currentTimeMillis()));
+                    SimpleDateFormat sdf = new SimpleDateFormat("d  MMMM, EEEE");
                 String sDate = sdf.format(ausgabe);
-                liste_String.add(sDate);
+                liste_gold_String.add(sDate);
                 liste_gold_search.add(ausgabe);
 
 
@@ -142,28 +142,29 @@ public class DateClass {
 
 
 }
-        System.out.println( "yellow  :"+ liste_gold_search.toString());
+      //  System.out.println( "yellow  :"+ liste_gold_search.toString());
     return liste_gold_search;
    }
 
     public  ArrayList<Date> liste_blue_search (ArrayList<Date> arrayList ){
         Date cuurentTime = new Date();
         ArrayList<Date> liste_blue_search = new ArrayList<Date>();
-        liste_String.add( "blue  :");
+     //   liste_blue_String.add( "Blaue Tonne :");
 
         for(Date ausgabe : arrayList) {
-            if(cuurentTime.getMonth() == ausgabe.getMonth())
-            {
-                SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy hh:mm");
+            if (cuurentTime.getMonth() == ausgabe.getMonth() )
+                if (  ausgabe.after(cuurentTime)) {
+              //  SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy ");
+                    SimpleDateFormat sdf = new SimpleDateFormat("d  MMMM, EEEE");
                 String sDate = sdf.format(ausgabe);
-                liste_String.add(sDate);
+                liste_blue_String.add(sDate);
                 liste_blue_search.add(ausgabe);
 
 
             }
 
         }
-        System.out.println ("blue  :" +liste_blue_search.toString());
+      //  System.out.println ("blue  :" +liste_blue_search.toString());
         return liste_blue_search;
     }
 
@@ -171,42 +172,49 @@ public class DateClass {
         Date cuurentTime = new Date();
         ArrayList<Date> liste_green_search = new ArrayList<Date>();
 
-        liste_String.add( "green  :");
+      //  liste_green_String.add( "Grüne Tonne :");
 
         for (Date ausgabe : arrayList) {
-            if (cuurentTime.getMonth() == ausgabe.getMonth()) {
+            if (cuurentTime.getMonth() == ausgabe.getMonth() )
+                if (  ausgabe.after(cuurentTime)) {
 
-                SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy hh:mm");
+               // SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy ");
+                    SimpleDateFormat sdf = new SimpleDateFormat("d  MMMM, EEEE");
                 String sDate = sdf.format(ausgabe);
-                liste_String.add(sDate);
+                liste_green_String.add(sDate);
                 liste_green_search.add(ausgabe);
 
 
             }
 
         }
-        System.out.println("green  :" + liste_green_search.toString());
+      //  System.out.println("green  :" + liste_green_search.toString());
         return liste_green_search;
     }
     public  ArrayList<Date> liste_black_search (ArrayList<Date> arrayList ) {
         Date cuurentTime = new Date();
         ArrayList<Date> liste_black_search = new ArrayList<Date>();
 
-        liste_String.add( "black  :");
+      //  liste_black_String.add( "Schwarze Tonne :");
 
         for (Date ausgabe : arrayList) {
-            if (cuurentTime.getMonth() == ausgabe.getMonth()) {
+            if (cuurentTime.getMonth() == ausgabe.getMonth() )
+                if (  ausgabe.after(cuurentTime)) {
 
-                SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy hh:mm");
+              //  SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy ");
+              SimpleDateFormat sdf = new SimpleDateFormat("d  MMMM, EEEE");
+               // DateFormat sdf;
+
+              // sdf =  DateFormat.getDateInstance(DateFormat.FULL);
                 String sDate = sdf.format(ausgabe);
-                liste_String.add(sDate);
+                liste_black_String.add(sDate);
                 liste_black_search.add(ausgabe);
 
 
             }
 
         }
-        System.out.println("black  :" + liste_black_search.toString());
+       // System.out.println("black  :" + liste_black_search.toString());
         return liste_black_search;
     }
 

@@ -3,19 +3,63 @@
               android:orientation="vertical"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
-              android:weightSum="1">
+              android:weightSum="1"
+              android:id="@+id/name"
+              android:background="#a5ffc2cf"
+              android:touchscreenBlocksFocus="false"
+              android:baselineAligned="true">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="This month :"
-        android:id="@+id/textView"/>
+        android:text="Müllabfuhr für den aktuellen Monat"
+        android:id="@+id/textView"
+        android:layout_gravity="center_horizontal"/>
 
     <ListView
-        android:id="@+id/listView1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
-    </ListView>
+        android:id="@+id/listView"
+        android:layout_width="350dp"
+        android:layout_height="130dp"
+        android:drawSelectorOnTop="false"
+        android:background="#ffffde2e"
+        android:layout_gravity="center_horizontal"/>
+
+    <ListView
+        android:layout_width="350dp"
+        android:layout_height="130dp"
+        android:id="@+id/listView2"
+        android:background="#ff5f89ff"
+        android:layout_gravity="center_horizontal"/>
+
+    <ListView
+        android:layout_width="350dp"
+        android:layout_height="150dp"
+        android:id="@+id/listView3"
+        android:background="#ff65ff4d"
+        android:layout_gravity="center_horizontal"/>
+
+    <ListView
+        android:layout_width="350dp"
+        android:layout_height="150dp"
+        android:id="@+id/listView4"
+        android:background="#ff000000"
+        android:layout_gravity="center_horizontal"/>
+
+    <Button
+        android:layout_width="139dp"
+        android:layout_height="wrap_content"
+        android:text="Close"
+        android:id="@+id/button2"
+        android:nestedScrollingEnabled="false"
+        android:layout_gravity="center_horizontal"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Was für Mülltonne ist Morgen dran ?"
+        android:id="@+id/button3"
+        android:layout_gravity="center_horizontal"/>
 
 </LinearLayout>

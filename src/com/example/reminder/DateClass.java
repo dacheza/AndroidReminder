@@ -10,11 +10,15 @@ public class DateClass {
 
 
 
-  static  ArrayList<String> liste_gold_String = new ArrayList<String>();
+    static  ArrayList<String> liste_gold_String = new ArrayList<String>();
     static  ArrayList<String> liste_blue_String = new ArrayList<String>();
     static  ArrayList<String> liste_green_String = new ArrayList<String>();
     static  ArrayList<String> liste_black_String = new ArrayList<String>();
 
+    static  ArrayList<Date>  liste_gold_search = new ArrayList<Date>();
+    static  ArrayList<Date>  liste_blue_search = new ArrayList<Date>();
+    static  ArrayList<Date>  liste_green_search = new ArrayList<Date>();
+    static  ArrayList<Date>  liste_black_search = new ArrayList<Date>();
 
 
     public  void main() {
@@ -42,7 +46,7 @@ public class DateClass {
         arrayList.add(new Date(115,3,23,7,0,0));
         arrayList.add(new Date(115,4,21,7,0,0));
        arrayList.add(new Date(115,5,18,7,0,0));
-        arrayList.add(new Date(115,6,16,7,0,0));
+       arrayList.add(new Date(115,6,16,7,0,0));
         arrayList.add(new Date(115,7,13,7,0,0));
         arrayList.add(new Date(115,8,10,7,0,0));
         arrayList.add(new Date(115,9,8,7,0,0));
@@ -69,7 +73,6 @@ public class DateClass {
     }
 
     public  ArrayList<Date> liste_green_add (ArrayList<Date> arrayList ){
-
         arrayList.add(new Date(115,2,5,7,0,0));
         arrayList.add(new Date(115,2,20,7,0,0));
         arrayList.add(new Date(115,3,2,7,0,0));
@@ -124,11 +127,11 @@ public class DateClass {
 
     public  ArrayList<Date> liste_gold_search (ArrayList<Date> arrayList ){
         Date cuurentTime = new Date();
-        ArrayList<Date> liste_gold_search = new ArrayList<Date>();
       //  liste_gold_String.add( "Gelbe Tonne :");
         for(Date ausgabe : arrayList) {
             if (cuurentTime.getMonth() == ausgabe.getMonth() )
-                if (  ausgabe.after(cuurentTime)) {
+                if (  ausgabe.after(cuurentTime))
+               {
               // System.out.println(format1.format(ausgabe));
               //  SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy ");
                 //   String sDate = sdf.format(new Date(System.currentTimeMillis()));
@@ -136,6 +139,7 @@ public class DateClass {
                 String sDate = sdf.format(ausgabe);
                 liste_gold_String.add(sDate);
                 liste_gold_search.add(ausgabe);
+
 
 
     }
@@ -148,7 +152,6 @@ public class DateClass {
 
     public  ArrayList<Date> liste_blue_search (ArrayList<Date> arrayList ){
         Date cuurentTime = new Date();
-        ArrayList<Date> liste_blue_search = new ArrayList<Date>();
      //   liste_blue_String.add( "Blaue Tonne :");
 
         for(Date ausgabe : arrayList) {
@@ -170,7 +173,6 @@ public class DateClass {
 
     public  ArrayList<Date> liste_green_search (ArrayList<Date> arrayList ) {
         Date cuurentTime = new Date();
-        ArrayList<Date> liste_green_search = new ArrayList<Date>();
 
       //  liste_green_String.add( "Grüne Tonne :");
 
@@ -193,7 +195,6 @@ public class DateClass {
     }
     public  ArrayList<Date> liste_black_search (ArrayList<Date> arrayList ) {
         Date cuurentTime = new Date();
-        ArrayList<Date> liste_black_search = new ArrayList<Date>();
 
       //  liste_black_String.add( "Schwarze Tonne :");
 
